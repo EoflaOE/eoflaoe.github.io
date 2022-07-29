@@ -1,6 +1,6 @@
 {
-    "name": "EoflaOE",
-    "short_name": "EoflaOE",
+    "name": "Aptivi",
+    "short_name": "Aptivi",
     "icons": [
         {
             "src": "/assets/android-chrome-192x192.png",
@@ -13,8 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#6c07dd",
-    "background_color": "#6c07dd",
-    "start_url": "http://eoflaoe.github.io",
+    "theme_color": "#085381",
+    "background_color": "#085381",
     "display": "standalone"
 }

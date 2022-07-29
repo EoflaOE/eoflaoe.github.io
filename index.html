@@ -17,17 +17,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
       jQuery(document).ready (function () {
-        jQuery.getJSON("https://api.github.com/repos/EoflaOE/Kernel-Simulator/tags").done(function (data) {
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/Kernel-Simulator/tags").done(function (data) {
           document.getElementById("ksrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
-          jQuery('#ksdownloadbin').attr ('href', "https://github.com/EoflaOE/Kernel-Simulator/releases/tag/" + data[0].name);
+          jQuery('#ksdownloadbin').attr ('href', "https://github.com/Aptivi/Kernel-Simulator/releases/tag/" + data[0].name);
         })
-        jQuery.getJSON("https://api.github.com/repos/EoflaOE/ReadLine.Reboot/tags").done(function (data) {
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/ReadLine.Reboot/tags").done(function (data) {
           document.getElementById("rlrrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
-          jQuery('#rlrdownloadbin').attr ('href', "https://github.com/EoflaOE/ReadLine.Reboot/releases/tag/" + data[0].name);
+          jQuery('#rlrdownloadbin').attr ('href', "https://github.com/Aptivi/ReadLine.Reboot/releases/tag/" + data[0].name);
         })
-        jQuery.getJSON("https://api.github.com/repos/EoflaOE/VisualCard/tags").done(function (data) {
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/VisualCard/tags").done(function (data) {
           document.getElementById("vcrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
-          jQuery('#vcdownloadbin').attr ('href', "https://github.com/EoflaOE/VisualCard/releases/tag/" + data[0].name);
+          jQuery('#vcdownloadbin').attr ('href', "https://github.com/Aptivi/VisualCard/releases/tag/" + data[0].name);
         })
       });
     </script>
@@ -35,17 +35,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="manifest" href="/assets/site.webmanifest">
-    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#8410e0">
+    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#020143">
     <link rel="shortcut icon" href="/assets/favicon.ico">
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="msapplication-config" content="/assets/browserconfig.xml">
-    <meta name="theme-color" content="#6c07dd">
+    <meta name="theme-color" content="#085381">
     <link rel="stylesheet" href="styles.css" />
-    <title>EoflaOE</title>
+    <title>Aptivi</title>
   </head>
   <body class="light" id="top">
     <header class="header center">
-      <img class="branding" src="/assets/OfficialBranding-1024-Curve.png">
+      <img class="branding" src="/assets/aptivi-written.png">
 
       <nav class="nav center">
         <ul class="nav__list center">
@@ -53,10 +53,10 @@
             <a class="link link--nav" href="#topprojects">Top Projects</a>
           </li>
           <li class="nav__list-item">
-            <a class="link link--nav" href="https://eofla.wordpress.com/contact">Contact</a>
+            <a class="link link--nav" href="https://officialaptivi.wordpress.com/contact">Contact</a>
           </li>
           <li class="nav__list-item">
-            <a class="link link--nav" href="https://eofla.wordpress.com">Blog</a>
+            <a class="link link--nav" href="https://officialaptivi.wordpress.com">Blog</a>
           </li>
         </ul>
 
@@ -78,10 +78,10 @@
       <!-- About -->
       <div class="about__grid">
         <div class="about">
-          <h1>Welcome to <span class="about__name">EoflaOE</span>!</h1>
+          <h1>Welcome to <span class="about__name">Aptivi</span>!</h1>
           <h2 class="about__role">Technology is all about us</h2>
           <p class="about__desc">
-            We, EoflaOE, were established in 2014 as an initial PC repair and
+            We, Aptivi, were established in 2014 as an initial PC repair and
             expertise center to save the world. Over time, we are getting expanded
             to programming, so we have made some of the projects that we were
             proud of. We are not only interested in PCs, but also interested in
@@ -90,7 +90,7 @@
 
           <div class="about__contact">
             <a
-              href="https://github.com/EoflaOE"
+              href="https://github.com/Aptivi"
               aria-label="github"
               class="link link--icon"
             >
@@ -104,7 +104,7 @@
               <i aria-hidden="true" class="fab fa-discord"></i>
             </a>
             <a
-              href="https://matrix.to/#/#eofla:matrix.org"
+              href="https://matrix.to/#/#aptivi:matrix.org"
               aria-label="matrix"
               class="link link--icon"
             >
@@ -114,7 +114,7 @@
         </div>
         
         <div class="about">
-           <img class="about__branding" src="/assets/OfficialBranding-Transparent-1024.png">
+           <img class="about__branding" src="/assets/aptivi-logo.png">
         </div>
       </div>
 
@@ -139,7 +139,7 @@
               </ul>
                 
               <a
-                href="https://github.com/EoflaOE/Kernel-Simulator/releases/tags/"
+                href="https://github.com/Aptivi/Kernel-Simulator/releases/tags/"
                 aria-label="binary download"
                 class="link link--icon"
                 id="ksdownloadbin"
@@ -147,14 +147,14 @@
                 <i aria-hidden="true" class="fas fa-arrow-down"></i>
               </a>
               <a
-                href="https://github.com/EoflaOE/Kernel-Simulator"
+                href="https://github.com/Aptivi/Kernel-Simulator"
                 aria-label="source code"
                 class="link link--icon"
               >
                 <i aria-hidden="true" class="fab fa-github"></i>
               </a>
               <a
-                href="https://eoflaoe.github.io/Kernel-Simulator"
+                href="https://Aptivi.github.io/Kernel-Simulator"
                 aria-label="wiki"
                 class="link link--icon"
               >
@@ -178,7 +178,7 @@
               </ul>
 
               <a
-                href="https://github.com/EoflaOE/ReadLine.Reboot/releases/tags/"
+                href="https://github.com/Aptivi/ReadLine.Reboot/releases/tags/"
                 aria-label="binary download"
                 class="link link--icon"
                 id="rlrdownloadbin"
@@ -186,14 +186,14 @@
                 <i aria-hidden="true" class="fas fa-arrow-down"></i>
               </a>
               <a
-                href="https://github.com/EoflaOE/ReadLine.Reboot"
+                href="https://github.com/Aptivi/ReadLine.Reboot"
                 aria-label="source code"
                 class="link link--icon"
               >
                 <i aria-hidden="true" class="fab fa-github"></i>
               </a>
               <a
-                href="https://eoflaoe.github.io/ReadLine.Reboot"
+                href="https://Aptivi.github.io/ReadLine.Reboot"
                 aria-label="wiki"
                 class="link link--icon"
               >
@@ -221,7 +221,7 @@
               </ul>
 
               <a
-                href="https://github.com/EoflaOE/VisualCard/releases/tags/"
+                href="https://github.com/Aptivi/VisualCard/releases/tags/"
                 aria-label="binary download"
                 class="link link--icon"
                 id="vcdownloadbin"
@@ -229,14 +229,14 @@
                 <i aria-hidden="true" class="fas fa-arrow-down"></i>
               </a>
               <a
-                href="https://github.com/EoflaOE/VisualCard"
+                href="https://github.com/Aptivi/VisualCard"
                 aria-label="source code"
                 class="link link--icon"
               >
                 <i aria-hidden="true" class="fab fa-github"></i>
               </a>
               <a
-                href="https://eoflaoe.github.io/VisualCard"
+                href="https://Aptivi.github.io/VisualCard"
                 aria-label="wiki"
                 class="link link--icon"
               >
@@ -280,7 +280,7 @@
 
     <footer class="footer">
       <a class="link footer__link">
-        Copyright © EoflaOE and its companies. All rights reserved.
+        Copyright © Aptivi. All rights reserved.
       </a>
     </footer>
 
