@@ -296,11 +296,13 @@ main {
 }
 
 .about .link--icon {
-  margin-right: 0.8em;
+  margin-right: 0.4em;
+  margin-left: 0.4em;
 }
 
 .about .btn--outline {
-  margin-right: 1em;
+  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
 
 .projects__grid {
@@ -335,6 +337,10 @@ main {
 .project__description {
   margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.wspace_compatible {
+  white-space: pre-wrap;
 }
 
 .project__stack {
