@@ -26,6 +26,10 @@ body {
   background-color: var(--clr-bg);
 }
 
+.titleface {
+  font-family: "Space Mono", Monospace;
+}
+
 .dark {
   --clr-bg: #020143;
   --clr-bg-alt: #432A4C;
