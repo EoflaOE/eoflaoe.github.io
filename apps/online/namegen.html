@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
     <meta name="description" content="Name Generator using our NamesList repository." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -21,14 +21,14 @@
         var firstNames;
         var lastNames;
         jQuery.ajax({
-          url : "https://cdn.jsdelivr.net/gh/EoflaOE/NamesList@master/Processed/FirstNames.txt",
+          url : "https://cdn.jsdelivr.net/gh/Aptivi/NamesList@master/Processed/FirstNames.txt",
           async:false,
           success : function(result){
             firstNames = result.split("\n");
           } 
         });
         jQuery.ajax({
-          url : "https://cdn.jsdelivr.net/gh/EoflaOE/NamesList@master/Processed/Surnames.txt",
+          url : "https://cdn.jsdelivr.net/gh/Aptivi/NamesList@master/Processed/Surnames.txt",
           async:false,
           success : function(result){
             lastNames = result.split("\n");
@@ -46,34 +46,27 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
     <link rel="manifest" href="/assets/site.webmanifest">
-    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#8410e0">
+    <link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#020143">
     <link rel="shortcut icon" href="/assets/favicon.ico">
     <meta name="msapplication-TileColor" content="#603cba">
     <meta name="msapplication-config" content="/assets/browserconfig.xml">
-    <meta name="theme-color" content="#6c07dd">
+    <meta name="theme-color" content="085381">
     <link rel="stylesheet" href="../../styles.css" />
-    <title>Name Generator • EoflaOE</title>
+    <title>Name Generator • Aptivi</title>
   </head>
-  <body class="light" id="top">
+  <body class="dark" id="top">
     <header class="header center">
-      <img class="branding" src="/assets/OfficialBranding-1024-Curve.png">
+      <img class="branding" src="/assets/aptivi-written.png">
 
       <nav class="nav center">
         <ul class="nav__list center">
           <li class="nav__list-item">
-            <a class="link link--nav" href="#topprojects">Top Projects</a>
+            <a class="link link--nav" href="https://officialaptivi.wordpress.com/contact">Contact</a>
           </li>
           <li class="nav__list-item">
-            <a class="link link--nav" href="https://eofla.wordpress.com/contact">Contact</a>
-          </li>
-          <li class="nav__list-item">
-            <a class="link link--nav" href="https://eofla.wordpress.com">Blog</a>
+            <a class="link link--nav" href="https://officialaptivi.wordpress.com">Blog</a>
           </li>
         </ul>
-
-        <button type="button" aria-label="toggle theme" class="btn btn--icon">
-          <i aria-hidden="true" id="btn-theme" class="fas fa-moon"></i>
-        </button>
 
         <button
           type="button"
@@ -105,7 +98,7 @@
           
           <div class="about__contact">
             <a
-              href="https://github.com/EoflaOE/NamesList"
+              href="https://github.com/Aptivi/NamesList"
               aria-label="github"
               class="link link--icon"
             >
@@ -138,7 +131,7 @@
 
     <footer class="footer">
       <a class="link footer__link">
-        Copyright © EoflaOE and its companies. All rights reserved.
+        Copyright © Aptivi and its companies. All rights reserved.
       </a>
     </footer>
 

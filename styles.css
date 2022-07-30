@@ -26,15 +26,6 @@ body {
   background-color: var(--clr-bg);
 }
 
-.light {
-  --clr-bg: #F7D0FF;
-  --clr-bg-alt: #FFF;
-  --clr-fg: #3D0043;
-  --clr-fg-alt: #000;
-  --clr-primary: #8129B5;
-  --shadow: rgba(111, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
 .dark {
   --clr-bg: #020143;
   --clr-bg-alt: #432A4C;
