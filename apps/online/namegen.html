@@ -46,6 +46,13 @@
         }
       }
     </script>
+    <script>
+      jQuery(document).ready (function () {
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/Namer/tags").done(function (data) {
+          jQuery('#namerrelease').attr ('href', "https://github.com/Aptivi/Namer/releases/tag/" + data[0].name);
+        })
+      });
+    </script>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
@@ -89,7 +96,8 @@
           <p class="about__desc">
             Click on the Generate button to start generating 10 names and showing
             them directly below the button. If you want the Python version of the
-            generator, click on the Python icon.
+            generator, click on the Python icon. If you are making a .NET project
+            and want to generate names, click on the cubes icon to get Namer.
           </p>
           
           <div class="about__contact">
@@ -98,7 +106,7 @@
               aria-label="github"
               class="link link--icon"
             >
-              <i aria-hidden="true" class="fab fa-github"></i>
+              <i aria-hidden="true" class="fa fa-list-ul"></i>
             </a>
             <a
               href="https://gist.github.com/EoflaOE/31218cbad397222247524b72253dc233"
@@ -107,6 +115,35 @@
             >
               <i aria-hidden="true" class="fab fa-python"></i>
             </a>
+            <a
+              href="https://github.com/Aptivi/Namer/releases/tags/"
+              aria-label="binary download"
+              class="link link--icon"
+              id="namerrelease"
+            >
+              <i aria-hidden="true" class="fas fa-arrow-down"></i>
+            </a>
+            <a
+              href="https://www.nuget.org/packages/Namer/"
+              aria-label="github"
+              class="link link--icon"
+            >
+              <i aria-hidden="true" class="fa fa-cubes"></i>
+            </a>
+            <a
+                href="https://github.com/Aptivi/Namer"
+                aria-label="source code"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://Aptivi.github.io/Namer"
+                aria-label="wiki"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+              </a>
           </div>
         </div>
         
