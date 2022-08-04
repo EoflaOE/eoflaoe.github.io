@@ -49,6 +49,7 @@
     <script>
       jQuery(document).ready (function () {
         jQuery.getJSON("https://api.github.com/repos/Aptivi/Namer/tags").done(function (data) {
+          document.getElementById("namerinfo").textContent="Namer • Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#namerrelease').attr ('href', "https://github.com/Aptivi/Namer/releases/tag/" + data[0].name);
         })
       });
@@ -100,6 +101,11 @@
             them directly below the button. If you want the Python version of the
             generator, click on the Python icon. If you are making a .NET project
             and want to generate names, click on the cubes icon to get Namer.
+          </p>
+          <p class="about__desc">
+          </p>
+          <p id="namerinfo" class="project__stack-item">
+            Namer • Version
           </p>
           
           <div class="about__contact">
