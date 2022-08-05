@@ -93,6 +93,24 @@ button {
   }
 }
 
+.mono {
+  font-family: Monospace;
+}
+
+.wide {
+  width: 100%;
+}
+
+.noresize {
+  resize: none;
+}
+
+::-webkit-file-upload-button {
+  background: var(--clr-primary);
+  color: var(--clr-bg);
+  font-family: "Inter", sans-serif;
+}
+
 /*===================
   buttons and links
 ===================*/
