@@ -26,6 +26,10 @@ body {
   background-color: var(--clr-bg);
 }
 
+.mainmargin {
+  margin-top: 5em;
+}
+
 .titleface {
   font-family: "Space Mono", Monospace;
 }
@@ -227,11 +231,21 @@ button {
 }
 
 .header {
-  height: 8em;
+  height: 7em;
   max-width: 1100px;
-  width: 95%;
-  margin: 0 auto;
+  width: auto;
+  margin-left: 1em;
   justify-content: space-between;
+}
+
+.header__holder {
+  height: 7em;
+  width: 100%;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  box-shadow: var(--shadow);
 }
 
 main {
@@ -257,7 +271,7 @@ main {
 }
 
 .nav__list {
-  margin-right: 1.5em;
+  margin-right: 4em;
   display: flex;
 }
 
