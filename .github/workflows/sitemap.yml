@@ -25,7 +25,8 @@ jobs:
       id: sitemap-ks
       uses: cicirello/generate-sitemap@v1
       with:
-        base-url-path: https://aptivi.github.io/Kernel-Simulator/
+        base-url-path: https://aptivi.github.io/
+        path-to-root: Kernel-Simulator
 
     - name: Output stats
       run: |
