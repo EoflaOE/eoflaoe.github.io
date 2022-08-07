@@ -22,7 +22,7 @@ jobs:
         base-url-path: https://aptivi.github.io/
 
     - name: Generate the site map (Kernel Simulator (TEST))
-      id: sitemap
+      id: sitemap-ks
       uses: cicirello/generate-sitemap@v1
       with:
         base-url-path: https://aptivi.github.io/Kernel-Simulator/
