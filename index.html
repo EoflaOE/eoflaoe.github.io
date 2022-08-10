@@ -29,9 +29,9 @@
           document.getElementById("rlrrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#rlrdownloadbin').attr ('href', "https://github.com/Aptivi/ReadLine.Reboot/releases/tag/" + data[0].name);
         })
-        jQuery.getJSON("https://api.github.com/repos/Aptivi/VisualCard/tags").done(function (data) {
-          document.getElementById("vcrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
-          jQuery('#vcdownloadbin').attr ('href', "https://github.com/Aptivi/VisualCard/releases/tag/" + data[0].name);
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/GRILO/tags").done(function (data) {
+          document.getElementById("grilorelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
+          jQuery('#grilodownloadbin').attr ('href', "https://github.com/Aptivi/GRILO/releases/tag/" + data[0].name);
         })
         jQuery.getJSON("https://api.github.com/repos/JamesNK/Newtonsoft.Json/tags").done(function (data) {
           document.getElementById("nsj4life").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
@@ -213,46 +213,50 @@
 
           <div class="project">
             <div class="project__top">
-              <h3 class="titleface">VisualCard</h3>
+              <h3 class="titleface">GRILO</h3>
               <p class="project__description">
-                VisualCard is a vCard parser that is made entirely in .NET with no
-                dependencies. It supports vCard versions 2.1, 3.0, and 4.0 and
-                vCard files containing one or more contacts.
+                GRILO is a managed bootloader simulator made entirely with .NET. It
+                allows you to "boot" to .NET assemblies that are compatible with
+                GRILO. You too! You can make your .NET application bootable!
               </p>
             </div>
 
             <div class="project__bottom">
-              <p class="btn btn--outline">
-                Under Development
-              </p>
               <ul class="project__stack">
-                <li id="vcrelease" class="project__stack-item">Version</li>
+                <li id="grilorelease" class="project__stack-item">Version</li>
               </ul>
 
               <a
-                href="https://github.com/Aptivi/VisualCard/releases/tags/"
+                href="https://github.com/Aptivi/GRILO/releases/tags/"
                 aria-label="binary download"
                 class="link link--icon"
-                id="vcdownloadbin"
+                id="grilodownloadbin"
               >
                 <i aria-hidden="true" class="fas fa-arrow-down"></i>
               </a>
               <a
-                href="https://www.nuget.org/packages/VisualCard/"
-                aria-label="nuget"
+                href="https://www.nuget.org/packages/GRILO.Bootloader/"
+                aria-label="nuget - bootloader"
                 class="link link--icon"
               >
                 <i aria-hidden="true" class="fa fa-cubes"></i>
               </a>
               <a
-                href="https://github.com/Aptivi/VisualCard"
+                href="https://www.nuget.org/packages/GRILO.Boot/"
+                aria-label="nuget - boot"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fa fa-cube"></i>
+              </a>
+              <a
+                href="https://github.com/Aptivi/GRILO"
                 aria-label="source code"
                 class="link link--icon"
               >
                 <i aria-hidden="true" class="fab fa-github"></i>
               </a>
               <a
-                href="https://Aptivi.github.io/VisualCard"
+                href="https://Aptivi.github.io/GRILO"
                 aria-label="wiki"
                 class="link link--icon"
               >
