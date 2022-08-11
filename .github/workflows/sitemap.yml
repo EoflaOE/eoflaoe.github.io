@@ -27,13 +27,14 @@ jobs:
         echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
         echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4.0.4
+    - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "EoflaOE"
+        git commit -m "Updated sitemap" -
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
       with:
-        title: "Automated sitemap update"
-        body: > 
-          Sitemap updated by the [generate-sitemap](https://github.com/cicirello/generate-sitemap) 
-          GitHub action.  
-        commit-message: "Automated sitemap update."
-        branch: create-pull-request/sitemap
-        delete-branch: true
+        github_token: ${{ secrets.G_TOKEN }}
+        branch: ${{ github.ref }}
