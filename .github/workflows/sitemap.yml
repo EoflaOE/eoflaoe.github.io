@@ -31,7 +31,8 @@ jobs:
       run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "EoflaOE"
-        git commit -m "Updated sitemap" -
+        git add .
+        git commit -m "Updated sitemap"
 
     - name: Push changes
       uses: ad-m/github-push-action@master
