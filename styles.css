@@ -230,6 +230,10 @@ button {
   align-items: center;
 }
 
+.center_text {
+  text-align: center;
+}
+
 .header {
   height: 7em;
   max-width: 1100px;
