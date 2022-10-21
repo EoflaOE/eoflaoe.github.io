@@ -26,10 +26,6 @@
           document.getElementById("ksrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#ksdownloadbin').attr ('href', "https://github.com/Aptivi/Kernel-Simulator/releases/tag/" + data[0].name);
         })
-        jQuery.getJSON("https://api.github.com/repos/Aptivi/ReadLine.Reboot/tags").done(function (data) {
-          document.getElementById("rlrrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
-          jQuery('#rlrdownloadbin').attr ('href', "https://github.com/Aptivi/ReadLine.Reboot/releases/tag/" + data[0].name);
-        })
         jQuery.getJSON("https://api.github.com/repos/Aptivi/GRILO/tags").done(function (data) {
           document.getElementById("grilorelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#grilodownloadbin').attr ('href', "https://github.com/Aptivi/GRILO/releases/tag/" + data[0].name);
@@ -158,52 +154,6 @@
               </a>
               <a
                 href="https://Aptivi.github.io/Kernel-Simulator"
-                aria-label="wiki"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project__top">
-              <h3 class="titleface">ReadLine.Reboot</h3>
-              <p class="project__description">
-                ReadLine.Reboot was created as a reboot to the original ReadLine
-                library made by Toni Solarin-Sodara, which was abandoned. It is a
-                port of GNU Readline to .NET.
-              </p>
-            </div>
-            <div class="project__bottom">
-              <ul class="project__stack">
-                <li id="rlrrelease" class="project__stack-item">Version</li>
-              </ul>
-
-              <a
-                href="https://github.com/Aptivi/ReadLine.Reboot/releases/tags/"
-                aria-label="binary download"
-                class="link link--icon"
-                id="rlrdownloadbin"
-              >
-                <i aria-hidden="true" class="fas fa-arrow-down"></i>
-              </a>
-              <a
-                href="https://www.nuget.org/packages/ReadLine.Reboot/"
-                aria-label="nuget"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fa fa-cubes"></i>
-              </a>
-              <a
-                href="https://github.com/Aptivi/ReadLine.Reboot"
-                aria-label="source code"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://Aptivi.github.io/ReadLine.Reboot"
                 aria-label="wiki"
                 class="link link--icon"
               >
