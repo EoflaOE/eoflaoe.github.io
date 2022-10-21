@@ -27,7 +27,7 @@ body {
 }
 
 .mainmargin {
-  margin-top: 5em;
+  margin-top: 7em;
 }
 
 .titleface {
@@ -250,6 +250,7 @@ button {
   top: 0;
   z-index: 2;
   box-shadow: var(--shadow);
+  background-color: #020127;
 }
 
 main {
