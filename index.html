@@ -71,7 +71,24 @@
       <div class="about__grid">
         <div class="about">
           <h1 class="titleface">Welcome to <span class="about__name">APTIVI</span>!</h1>
-          <h2 class="about__role">...where tech changes</h2>
+          <!--<h2 class="about__role">...where tech changes</h2>-->
+          <h2 class="about__role" id="dotnetcorethreepointone">.NET Core 3.1 will become EOL</h2>
+          <script>
+            var countDownDate = new Date("December 13, 2022 00:00:00").getTime();
+            var x = setInterval(function() {
+              var now = new Date().getTime();
+              var distance = countDownDate - now;
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+              document.getElementById("dotnetcorethreepointone").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s until .NET Core 3.1 becomes EOL";
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("dotnetcorethreepointone").innerHTML = ".NET Core 3.1 is now EOL";
+              }
+            }, 1000);
+          </script>
           <p class="about__desc">
             We, Aptivi, were established in 2014 as an initial PC repair and
             expertise center to save the world. Over time, we are getting expanded
