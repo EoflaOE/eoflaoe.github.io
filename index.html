@@ -30,10 +30,6 @@
           document.getElementById("grilorelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#grilodownloadbin').attr ('href', "https://github.com/Aptivi/GRILO/releases/tag/" + data[0].name);
         })
-        jQuery.getJSON("https://api.github.com/repos/JamesNK/Newtonsoft.Json/tags").done(function (data) {
-          document.getElementById("nsj4life").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
-          jQuery('#nsj4lifebin').attr ('href', "https://github.com/JamesNK/Newtonsoft.Json/releases/tag/" + data[0].name);
-        })
       });
     </script>
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
@@ -234,132 +230,8 @@
           </div>
         </div>
       </section>
+      <a class="link titleface" href="projects/index.html">>> More projects</a>
       <p class="project__stack-item center_text">Online API documentation may change as development of upcoming version goes on.</p>
-      
-      <!-- Our favorite projects -->
-      <section id="topprojects" class="section projects">
-        <h2 class="section__title titleface">Our favorite projects</h2>
-
-        <div class="projects__grid">
-          <div class="project">
-            <div class="project__top">
-              <h3 class="titleface">Newtonsoft.Json</h3>
-              <p class="project__description">
-                Newtonsoft.Json is a godlike JSON file parser, maker, and manipulator
-                that allows you to interact with JSON files, create them, edit their
-                properties, add them, and much more. It is one of the most downloaded
-                NuGet packages, and we strive to use it to our projects that use
-                JSON, like Kernel Simulator and GRILO. Newtonsoft.Json is made by
-                James Newton-King.
-              </p>
-            </div>
-
-            <div class="project__bottom">
-              <ul class="project__stack">
-                <li id="nsj4life" class="project__stack-item">Version</li>
-              </ul>
-
-              <a
-                href="https://github.com/JamesNK/Newtonsoft.Json/releases/tags/"
-                aria-label="binary download"
-                class="link link--icon"
-                id="nsj4lifebin"
-              >
-                <i aria-hidden="true" class="fas fa-arrow-down"></i>
-              </a>
-              <a
-                href="https://www.nuget.org/packages/Newtonsoft.Json/"
-                aria-label="nuget"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fa fa-cubes"></i>
-              </a>
-              <a
-                href="https://github.com/JamesNK/Newtonsoft.Json"
-                aria-label="source code"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fab fa-github"></i>
-              </a>
-              <a
-                href="https://www.newtonsoft.com/json/help"
-                aria-label="wiki"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Online Projects -->
-      <section id="topprojects" class="section projects">
-        <h2 class="section__title titleface">Online Projects</h2>
-
-        <div class="projects__grid">
-          <div class="project">
-            <div class="project__top">
-              <h3 class="titleface">Name Generator</h3>
-              <p class="project__description">
-                Using our ever-growing names database which we host publicly at
-                GitHub, our name generator aims at generating names for your future
-                novel, story, and much more. We host names and surnames that vary
-                from Asian to American and much more at our GitHub repository by
-                pressing its icon below the description.
-              </p>
-            </div>
-
-            <div class="project__bottom">
-              <a
-                href="apps/online/namegen.html"
-                aria-label="name generator"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project__top">
-              <h3 class="titleface">VT Filter (text)</h3>
-              <p class="project__description">
-                This app filters the text from all the VT sequences, including the
-                CSI sequences, OSC sequences, and many other supported sequences.
-              </p>
-            </div>
-
-            <div class="project__bottom">
-              <a
-                href="apps/online/vtfiltertext.html"
-                aria-label="vt filter text"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project__top">
-              <h3 class="titleface">VT Filter (file)</h3>
-              <p class="project__description">
-                This app filters the file from all the VT sequences, including the
-                CSI sequences, OSC sequences, and many other supported sequences.
-              </p>
-            </div>
-
-            <div class="project__bottom">
-              <a
-                href="apps/online/vtfilterfile.html"
-                aria-label="vt filter file"
-                class="link link--icon"
-              >
-                <i aria-hidden="true" class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
 
     <footer class="footer">

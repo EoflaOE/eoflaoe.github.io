@@ -267,6 +267,7 @@ main {
 
 .section {
   margin-top: 5em;
+  margin-bottom: 3em;
 }
 
 .section__title {
