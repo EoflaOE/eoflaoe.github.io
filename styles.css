@@ -40,8 +40,8 @@ body {
   --clr-fg: #DDBDDD;
   --clr-fg-alt: #FFCDFF;
   --clr-primary: #C390D9;
-  --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  --shadow: rgba(128, 102, 128, 0.16) 0px 10px 36px 0px,
+    rgba(128, 102, 128, 0.06) 0px 0px 0px 1px;
 }
 
 ::-moz-selection {
