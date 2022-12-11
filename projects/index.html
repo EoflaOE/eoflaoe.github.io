@@ -84,6 +84,18 @@
           document.getElementById("csrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#csdownloadbin').attr ('href', "https://github.com/Aptivi/ColorSeq/releases/tag/" + data[0].name);
         })
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/KSScreensaverTemplate/tags").done(function (data) {
+          document.getElementById("ksstrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
+        })
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/KSModTemplate/tags").done(function (data) {
+          document.getElementById("ksmtrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
+        })
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/KSCustomSplashTemplate/tags").done(function (data) {
+          document.getElementById("kscstrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
+        })
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/KSModExamples/branches/main").done(function (data) {
+          document.getElementById("ksmerelease").textContent="Version " + data.commit.commit.author.date + " • " + data.commit.sha.slice(0,7);
+        })
         jQuery.getJSON("https://api.github.com/repos/Aptivi/NamesList/branches/main").done(function (data) {
           document.getElementById("nameslistdate").textContent="Version " + data.commit.commit.author.date + " • " + data.commit.sha.slice(0,7);
         })
@@ -950,6 +962,112 @@
                 class="link link--icon"
               >
                 <i aria-hidden="true" class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Our template projects -->
+      <section id="topprojects" class="section projects">
+        <h2 class="section__title titleface">Our template projects</h2>
+
+        <div class="projects__grid">
+          <div class="project">
+            <div class="project__top">
+              <h3 class="titleface">KS Screensaver Template</h3>
+              <p class="project__description">
+                Kernel Simulator Screensaver Template is a template
+                project that allows you to get a basic scaffolding
+                to start your screensaver project for Kernel Simulator.
+              </p>
+            </div>
+
+            <div class="project__bottom">
+              <ul class="project__stack">
+                <li id="ksstrelease" class="project__stack-item">Version</li>
+              </ul>
+                
+              <a
+                href="https://github.com/Aptivi/KSScreensaverTemplate"
+                aria-label="source code"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+            <div class="project__top">
+              <h3 class="titleface">KS Mod Template</h3>
+              <p class="project__description">
+                Kernel Simulator Mod Template is a template
+                project that allows you to get a basic scaffolding
+                to start your mod for Kernel Simulator.
+              </p>
+            </div>
+
+            <div class="project__bottom">
+              <ul class="project__stack">
+                <li id="ksmtrelease" class="project__stack-item">Version</li>
+              </ul>
+                
+              <a
+                href="https://github.com/Aptivi/KSModTemplate"
+                aria-label="source code"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+            <div class="project__top">
+              <h3 class="titleface">KS Custom Splash Template</h3>
+              <p class="project__description">
+                Kernel Simulator Custom Splash Template is a template
+                project that allows you to get a basic scaffolding
+                to start your custom splash for Kernel Simulator.
+              </p>
+            </div>
+
+            <div class="project__bottom">
+              <ul class="project__stack">
+                <li id="kscstrelease" class="project__stack-item">Version</li>
+              </ul>
+                
+              <a
+                href="https://github.com/Aptivi/KSCustomSplashTemplate"
+                aria-label="source code"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+            <div class="project__top">
+              <h3 class="titleface">KS Mod Examples</h3>
+              <p class="project__description">
+                Kernel Simulator Mod Examples gives you hints of
+                how mods and screensavers are made.
+              </p>
+            </div>
+
+            <div class="project__bottom">
+              <ul class="project__stack">
+                <li id="ksmerelease" class="project__stack-item">Version</li>
+              </ul>
+                
+              <a
+                href="https://github.com/Aptivi/KSModExamples"
+                aria-label="source code"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fab fa-github"></i>
               </a>
             </div>
           </div>
