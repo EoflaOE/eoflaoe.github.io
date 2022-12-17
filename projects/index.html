@@ -84,6 +84,10 @@
           document.getElementById("csrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#csdownloadbin').attr ('href', "https://github.com/Aptivi/ColorSeq/releases/tag/" + data[0].name);
         })
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/TermRead/tags").done(function (data) {
+          document.getElementById("trerelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
+          jQuery('#tredownloadbin').attr ('href', "https://github.com/Aptivi/TermRead/releases/tag/" + data[0].name);
+        })
         jQuery.getJSON("https://api.github.com/repos/Aptivi/KSScreensaverTemplate/tags").done(function (data) {
           document.getElementById("ksstrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
         })
@@ -890,6 +894,46 @@
               </a>
               <a
                 href="https://Aptivi.github.io/ColorSeq"
+                aria-label="wiki"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+            <div class="project__top">
+              <h3 class="titleface">TermRead</h3>
+              <p class="project__description">
+                A spiritual reboot of ReadLine.Reboot that allows you to
+                flexibly write your input to the console without any
+                limitations.
+              </p>
+            </div>
+
+            <div class="project__bottom">
+              <ul class="project__stack">
+                <li id="trerelease" class="project__stack-item">Version</li>
+              </ul>
+                
+              <a
+                href="https://github.com/Aptivi/TermRead/releases/tags/"
+                aria-label="binary download"
+                class="link link--icon"
+                id="tredownloadbin"
+              >
+                <i aria-hidden="true" class="fas fa-arrow-down"></i>
+              </a>
+              <a
+                href="https://github.com/Aptivi/TermRead"
+                aria-label="source code"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://Aptivi.github.io/TermRead"
                 aria-label="wiki"
                 class="link link--icon"
               >
