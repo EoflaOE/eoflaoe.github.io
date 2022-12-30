@@ -88,6 +88,10 @@
           document.getElementById("trerelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#tredownloadbin').attr ('href', "https://github.com/Aptivi/TermRead/releases/tag/" + data[0].name);
         })
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/SharpLyrics/tags").done(function (data) {
+          document.getElementById("slrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
+          jQuery('#sldownloadbin').attr ('href', "https://github.com/Aptivi/SharpLyrics/releases/tag/" + data[0].name);
+        })
         jQuery.getJSON("https://api.github.com/repos/Aptivi/KSScreensaverTemplate/tags").done(function (data) {
           document.getElementById("ksstrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
         })
@@ -934,6 +938,46 @@
               </a>
               <a
                 href="https://Aptivi.github.io/TermRead"
+                aria-label="wiki"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+            <div class="project__top">
+              <h3 class="titleface">SharpLyrics</h3>
+              <p class="project__description">
+                A C# library that allows you to parse your
+                .LRC and .TXT lyric files. It's a helper to
+                implement lyrics in your own music player.
+              </p>
+            </div>
+
+            <div class="project__bottom">
+              <ul class="project__stack">
+                <li id="slrelease" class="project__stack-item">Version</li>
+              </ul>
+                
+              <a
+                href="https://github.com/Aptivi/SharpLyrics/releases/tags/"
+                aria-label="binary download"
+                class="link link--icon"
+                id="sldownloadbin"
+              >
+                <i aria-hidden="true" class="fas fa-arrow-down"></i>
+              </a>
+              <a
+                href="https://github.com/Aptivi/SharpLyrics"
+                aria-label="source code"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://Aptivi.github.io/SharpLyrics"
                 aria-label="wiki"
                 class="link link--icon"
               >
