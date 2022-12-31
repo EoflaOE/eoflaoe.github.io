@@ -32,6 +32,7 @@ body {
 
 .titleface {
   font-family: "Space Mono", Monospace;
+  margin-bottom: 0.5em;
 }
 
 .dark {
@@ -40,6 +41,8 @@ body {
   --clr-fg: #DDBDDD;
   --clr-fg-alt: #FFCDFF;
   --clr-primary: #C390D9;
+  --clr-status-ok: #55CD55;
+  --clr-status-fail: #CD5555;
   --shadow: rgba(128, 102, 128, 0.16) 0px 10px 36px 0px,
     rgba(128, 102, 128, 0.06) 0px 0px 0px 1px;
 }
@@ -193,6 +196,84 @@ button {
 
 .btn--outline:hover::before,
 .btn--outline:focus::before {
+  right: 0;
+}
+
+.statok {
+  display: block;
+  padding: 0.8em 1.4em;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: lowercase;
+  transition: transform 0.2s ease-in-out;
+}
+
+.statok--outline {
+  color: var(--clr-status-ok);
+  border: 2px solid var(--clr-status-ok);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.statok--outline:focus,
+.statok--outline:hover {
+  color: var(--clr-status-ok);
+}
+
+.statok--outline:before {
+  content: "";
+  position: absolute;
+  background-color: var(--clr-status-ok);
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: right 0.2s ease-in-out;
+}
+
+.statok--outline:hover::before,
+.statok--outline:focus::before {
+  right: 0;
+}
+
+.statfail {
+  display: block;
+  padding: 0.8em 1.4em;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: lowercase;
+  transition: transform 0.2s ease-in-out;
+}
+
+.statfail--outline {
+  color: var(--clr-status-fail);
+  border: 2px solid var(--clr-status-fail);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.statfail--outline:focus,
+.statfail--outline:hover {
+  color: var(--clr-status-fail);
+}
+
+.statfail--outline:before {
+  content: "";
+  position: absolute;
+  background-color: var(--clr-status-fail);
+  right: 100%;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: right 0.2s ease-in-out;
+}
+
+.statfail--outline:hover::before,
+.statfail--outline:focus::before {
   right: 0;
 }
 
