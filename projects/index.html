@@ -92,6 +92,10 @@
           document.getElementById("slrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
           jQuery('#sldownloadbin').attr ('href', "https://github.com/Aptivi/SharpLyrics/releases/tag/" + data[0].name);
         })
+        jQuery.getJSON("https://api.github.com/repos/Aptivi/Yunikodo/tags").done(function (data) {
+          document.getElementById("ykrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
+          jQuery('#ykdownloadbin').attr ('href', "https://github.com/Aptivi/Yunikodo/releases/tag/" + data[0].name);
+        })
         jQuery.getJSON("https://api.github.com/repos/Aptivi/KSScreensaverTemplate/tags").done(function (data) {
           document.getElementById("ksstrelease").textContent="Version " + data[0].name + " • " + data[0].commit.sha.slice(0,7);
         })
@@ -988,6 +992,46 @@
               </a>
               <a
                 href="https://Aptivi.github.io/SharpLyrics"
+                aria-label="wiki"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+          
+          <div class="project">
+            <div class="project__top">
+              <h3 class="titleface">Yunikodo</h3>
+              <p class="project__description">
+                This project allows you to query your Unicode
+                character using the Unicode Character Database.
+                It supports all characters up to Unicode 15.0.0.
+              </p>
+            </div>
+
+            <div class="project__bottom">
+              <ul class="project__stack">
+                <li id="ykrelease" class="project__stack-item">Version</li>
+              </ul>
+                
+              <a
+                href="https://github.com/Aptivi/Yunikodo/releases/tags/"
+                aria-label="binary download"
+                class="link link--icon"
+                id="ykdownloadbin"
+              >
+                <i aria-hidden="true" class="fas fa-arrow-down"></i>
+              </a>
+              <a
+                href="https://github.com/Aptivi/Yunikodo"
+                aria-label="source code"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://Aptivi.github.io/Yunikodo"
                 aria-label="wiki"
                 class="link link--icon"
               >
