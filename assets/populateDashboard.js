@@ -1,4 +1,4 @@
-let holder = `
+let dbholder = `
           <div class="project">
             <div class="project__top">
               <h3 class="titleface">ProjectName</h3>
@@ -18,7 +18,7 @@ let holder = `
 
 jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-health@main/Health.json").done(function (data) {
   for (var i = 0; i < data.length; i++) {
-    let finalHolder = holder;
+    let finalHolder = dbholder;
     if (data[i].IsDegraded)
       finalHolder = finalHolder.replace("statok", "statfail").replace("statok--outline", "statfail--outline").replace("StatusText", "Degraded");
     document.getElementById("dashboard").innerHTML += 
