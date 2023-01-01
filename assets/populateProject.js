@@ -15,7 +15,7 @@ let projHolderIntro = `
 
 let projHolderLink = `
               <a
-                href="https://github.com/Aptivi/ProjectSlug/releases/tags/"
+                href="https://github.com/Aptivi/ProjectSlug/releases/tag/VersionSlug"
                 aria-label="binary download"
                 class="link link--icon"
               >
@@ -58,7 +58,7 @@ let projHolderOutro = `
           </div>
 `;
 
-var githubReleasesLink;
+var projVersionNum;
 var projVersion;
 var projCommitHash;
 jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@main/Projects.json").done(function (data) {
@@ -68,16 +68,15 @@ jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@main/P
     let slug = data[i].ProjectSlug;
     let githubApiTagsLink = "https://api.github.com/repos/Aptivi/" + slug + "/tags";
     let wikiLink = "https://Aptivi.github.io/" + slug + "/";
-    window.githubReleasesLink;
     
     $.ajaxSetup({
       async: false
     });
     
     jQuery.getJSON(githubApiTagsLink).done(function (vdata) {
+      window.projVersionNum = vdata[0].name;
       window.projVersion = "Version " + vdata[0].name;
       window.projCommitHash = vdata[0].commit.sha.slice(0,7);
-      window.githubReleasesLink = "https://github.com/Aptivi/" + slug + "/releases/tag/" + vdata[0].name;
     });
     
     $.ajaxSetup({
@@ -85,7 +84,7 @@ jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@main/P
     });
     
     finalHolder = finalHolder.replace("ProjectName", data[i].ProjectName).replace("ProjectDescription", data[i].Description).replace("ProjectVersion", projVersion).replace("ProjectCommitHash", projCommitHash);
-    finalHolder += projHolderLink.replace("ProjectSlug", slug);
+    finalHolder += projHolderLink.replace("ProjectSlug", slug).replace("VersionSlug", window.projVersionNum);
     finalHolder += projHolderSource.replace("ProjectSlug", slug);
     
     for (var j = 0; j < data[i].NuGetPackages.length; j++){
