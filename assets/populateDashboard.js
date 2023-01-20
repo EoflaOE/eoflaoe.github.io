@@ -16,7 +16,7 @@ let dbholder = `
           </div>
 `;
 
-jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-health@main/Health.json").done(function (data) {
+jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-health@latest/Health.json").done(function (data) {
   for (var i = 0; i < data.length; i++) {
     let finalHolder = dbholder;
     if (data[i].IsDegraded)

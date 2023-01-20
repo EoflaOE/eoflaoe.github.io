@@ -71,7 +71,7 @@ let projHolderOutro = `
 var projVersionNum;
 var projVersion;
 var projCommitHash;
-jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@main/Projects.json").done(function (data) {
+jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@latest/Projects.json").done(function (data) {
   for (var i = 0; i < data.length; i++) {
     let finalHolder = projHolderIntro;
     
