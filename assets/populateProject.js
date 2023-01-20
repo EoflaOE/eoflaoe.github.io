@@ -53,6 +53,16 @@ let projHolderWiki = `
               </a>
 `;
 
+let projHolderWikiGB = `
+              <a
+                href="https://aptivi.gitbook.io/ProjectGBSlug"
+                aria-label="wiki"
+                class="link link--icon"
+              >
+                <i aria-hidden="true" class="fas fa-external-link-alt"></i>
+              </a>
+`;
+
 let projHolderOutro = `
             </div>
           </div>
@@ -66,6 +76,7 @@ jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@main/P
     let finalHolder = projHolderIntro;
     
     let slug = data[i].ProjectSlug;
+    let sluggb = data[i].ProjectGBSlug;
     let githubApiTagsLink = "https://api.github.com/repos/Aptivi/" + slug + "/tags";
     let wikiLink = "https://Aptivi.github.io/" + slug + "/";
     
@@ -92,6 +103,7 @@ jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@main/P
     }
     
     finalHolder += projHolderWiki.replace("ProjectSlug", slug);
+    finalHolder += projHolderWikiGB.replace("ProjectGBSlug", sluggb);
       
     finalHolder += projHolderOutro;
     
