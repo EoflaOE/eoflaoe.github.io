@@ -9,7 +9,7 @@ let header = `
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
