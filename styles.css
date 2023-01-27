@@ -31,7 +31,7 @@ body {
 }
 
 .titleface {
-  font-family: "Space Mono", Monospace;
+  font-family: "Space Grotesk", Monospace;
   margin-bottom: 0.5em;
 }
 
@@ -151,7 +151,7 @@ button {
 .link--nav {
   color: var(--clr-fg);
   font-weight: 500;
-  font-family: "Space Mono", Monospace;
+  font-family: "Space Grotesk", Monospace;
 }
 
 .link--icon {
@@ -386,6 +386,11 @@ main {
 
 .about__name {
   color: var(--clr-primary);
+}
+
+.about__name__b {
+  color: var(--clr-primary);
+  font-family: "Space Mono", Monospace;
 }
 
 .about__role {
