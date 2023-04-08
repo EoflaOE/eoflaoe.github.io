@@ -34,7 +34,7 @@ let header = `
       <nav class="nav center">
         <ul class="nav__list center">
           <li class="nav__list-item">
-            <a class="link link--nav" href="https://officialaptivi.wordpress.com/2023/03/14/updates-regarding-development-of-our-projects/">Announcement regarding our projects</a>
+            <a class="link link--nav" href="https://officialaptivi.wordpress.com/2023/04/08/were-gone-but-well-come-back/">We're gone, but...</a>
           </li>
           <li class="nav__list-item">
             <a class="link link--nav" href="https://aptivi.github.io/projects/index.html">Projects</a>
