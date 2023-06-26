@@ -71,6 +71,7 @@ let projHolderOutro = `
 var projVersionNum;
 var projVersion;
 var projCommitHash;
+var finalHTML = "";
 jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@latest/Projects.json").done(function (data) {
   for (var i = 0; i < data.length; i++) {
     let finalHolder = projHolderIntro;
@@ -107,6 +108,7 @@ jQuery.getJSON("https://cdn.jsdelivr.net/gh/Aptivi-Analytics/project-list@latest
       
     finalHolder += projHolderOutro;
     
-    document.getElementById("projs").innerHTML += finalHolder;
+    window.finalHTML += finalHolder;
   }
+  document.getElementById("projs").innerHTML = window.finalHTML;
 })
