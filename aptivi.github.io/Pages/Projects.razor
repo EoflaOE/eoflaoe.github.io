@@ -1,0 +1,74 @@
+﻿@page "/projects"
+
+<PageTitle>Projects - Aptivi</PageTitle>
+
+@using System.Threading;
+@using System.Net;
+@using System.Text;
+@using aptivi.github.io.Data
+@using System.IO
+@using System.Text.Json
+@inject ProjectService ProjService
+@inject NavigationManager NavManager
+
+<h1>Our projects</h1>
+<br />
+<p>
+    Here lists all our projects that are published to the public at our GitHub. Also, it shows relevant links to their
+    NuGet packages and their release pages so that you can easily download them from here.
+</p>
+
+@if (projects == null)
+{
+    <p><em>Loading projects...</em></p>
+}
+else
+{
+    <table class="table" style="vertical-align: middle" width="100%">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Description</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var project in projects)
+            {
+                <tr>
+                    @if (!string.IsNullOrEmpty(project.ProjectImageLink))
+                    {
+                        <td><object data="https://cdn.jsdelivr.net/gh/Aptivi/@project.ProjectSlug@@latest/@project.ProjectImageLink" type="image/jpeg" height="64" width="64"><img src="assets/aptivi-logo-transparent-ios.png" height="64" width="64" /></object></td>
+                    }
+                    else
+                    {
+                        <td><img src="assets/aptivi-logo-transparent-ios.png" height="64" width="64" /></td>
+                    }
+					<td><strong>@project.ProjectName</strong></td>
+                    <td>@project.Description</td>
+					<td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://www.github.com/Aptivi/{project.ProjectSlug}"))"><span class="fab fa-github" aria-hidden="true" /></button></td>
+                    <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.gitbook.io/{project.ProjectGBSlug}"))"><span class="fa fa-book" aria-hidden="true" /></button></td>
+                    <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.github.io/{project.ProjectSlug}"))"><span class="oi oi-code" aria-hidden="true" /></button></td>
+                    @foreach (string nugetPackageName in project.NuGetPackages)
+                    {
+                        <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://nuget.org/packages/{nugetPackageName}"))"><span class="fa fa-cubes" aria-hidden="true" /></button></td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private static Project[] projects;
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (projects is null)
+            projects = await ProjectService.GetProjects();
+    }
+}
