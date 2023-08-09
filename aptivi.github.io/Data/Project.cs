@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace aptivi.github.io.Data
 {
     public class Project
@@ -8,5 +10,10 @@ namespace aptivi.github.io.Data
         public string ProjectGBSlug { get; set; }
         public string[] NuGetPackages { get; set; }
         public string ProjectImageLink { get; set; }
+
+        [JsonIgnore]
+        public string ProjectVersion { get; set; }
+        [JsonIgnore]
+        public string ProjectCommitSha { get; set; }
     }
 }

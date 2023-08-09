@@ -14,6 +14,7 @@
 <h1>Our projects</h1>
 <br />
 <p>
+    &emsp;
     Here lists all our projects that are published to the public at our GitHub. Also, it shows relevant links to their
     NuGet packages and their release pages so that you can easily download them from here.
 </p>
@@ -30,6 +31,7 @@ else
                 <th></th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Version</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -50,6 +52,7 @@ else
                     }
 					<td><strong>@project.ProjectName</strong></td>
                     <td>@project.Description</td>
+                    <td>@project.ProjectVersion<br />@project.ProjectCommitSha</td>
 					<td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://www.github.com/Aptivi/{project.ProjectSlug}"))"><span class="fab fa-github" aria-hidden="true" /></button></td>
                     <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.gitbook.io/{project.ProjectGBSlug}"))"><span class="fa fa-book" aria-hidden="true" /></button></td>
                     <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.github.io/{project.ProjectSlug}"))"><span class="oi oi-code" aria-hidden="true" /></button></td>
