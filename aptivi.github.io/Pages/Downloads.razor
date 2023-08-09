@@ -1,0 +1,140 @@
+﻿@page "/downloads"
+
+<PageTitle>Downloads - Aptivi</PageTitle>
+
+@using System.Threading;
+@using System.Net;
+@using System.Text;
+@using aptivi.github.io.Data
+@using System.IO
+@using System.Text.Json
+@inject ProjectService ProjService
+@inject NavigationManager NavManager
+
+<h1>Downloads</h1>
+<br />
+<p>
+    &emsp;
+    Here lists all our downloads that are published to the public at the moment. These downloads are found either
+    directly from our blog site, or indirectly from trusted file hosting providers.
+</p>
+
+<table class="table" style="vertical-align: middle" width="100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <strong>Collection of Distorted Wallpapers</strong>
+            </td>
+            <td>
+                This is a collection of distorted wallpapers made by one of the xscreensaver screensavers against
+                the Xubuntu's official wallpaper images that were made across different versions.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://mir.cr/3JY4DTZ1"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Tapet Collection</strong>
+            </td>
+            <td>
+                This is a collection of wallpapers made by Tapet, categorized according to the generated wallpapers
+                and their content. This either makes you excited or relaxed.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://drive.google.com/drive/folders/1ThBpgYP9079YVqg1ub2IAsMIxnNMxWQj?usp=sharing"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Windows 11 Wallpapers</strong>
+            </td>
+            <td>
+                This is a collection of Windows 11 official wallpapers that are originated from the Windows 11 June
+                2021 leak.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://drive.google.com/file/d/1RnRXoCSyUlWfg-ZrexT6qo9IiNGwhcaa/view?usp=sharing"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Collection of PPT OS (1/2)</strong>
+            </td>
+            <td>
+                This is a collection of PowerPoint operating systems that simulate the real operations of the entire
+                operating system, differing in look and feel. This is part 1 of the collection.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://drive.google.com/file/d/17X57jrlzQsZpITlu1w7qF-4-W8LvpE3b/view?usp=sharing"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Collection of PPT OS (2/2)</strong>
+            </td>
+            <td>
+                This is a collection of PowerPoint operating systems that simulate the real operations of the entire
+                operating system, differing in look and feel. This is part 2 of the collection.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://drive.google.com/file/d/1bLZvpDC0NF4fe-RAeJqJ76Zb34ai7b07/view?usp=sharing"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>News Series MP3</strong>
+            </td>
+            <td>
+                This is a collection of MP3 files for different News series, categorized by year. The original version,
+                the rebooted version, and the two bonus versions can be downloaded and listened to.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://drive.google.com/drive/folders/162r3U1xlzWHVUEmgRc-PYfZAtvF1Ytdi"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Windows 11 Sounds</strong>
+            </td>
+            <td>
+                This is a collection of Windows 11 official sounds that are originated from the Windows 11 June
+                2021 leak.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://drive.google.com/file/d/1Tpkv9CULF8uXnGS1PmQAPyxN1J5czjT1/view?usp=sharing"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Windows 11 New Fonts</strong>
+            </td>
+            <td>
+                This is a collection of Windows 11 official fonts that are originated from the Windows 11 June
+                2021 leak. It contains the brand new Segoe UI Display font.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://drive.google.com/file/d/1cjPq7IAkvsi_p-ypx5wK4v9h5i9MdOhw/view?usp=sharing"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>NFS: MW (2005) - Debug Document</strong>
+            </td>
+            <td>
+                This debug document gives you a detailed explanation about how Blackbox and EA tested Need for Speed:
+                Most Wanted (2005) and its game logic, such as memory allocation displays, debug cars, and more.
+            </td>
+            <td>
+                <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://officialaptivi.files.wordpress.com/2020/03/nfs-2005-debug-revision-1.docx"))"><span class="fa fa-file-download" aria-hidden="true" /></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
