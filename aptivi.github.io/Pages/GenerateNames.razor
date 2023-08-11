@@ -1,0 +1,88 @@
+﻿@page "/namegen"
+
+<PageTitle>Name Generator Demo - Aptivi</PageTitle>
+
+@using System.Threading;
+@using System.Net;
+@using System.Text;
+@using aptivi.github.io.Data
+@using System.IO
+@using System.Text.Json
+@inject ProjectService ProjService
+@inject NavigationManager NavManager
+
+<h1>Name Generator Demo</h1>
+<br />
+<p>
+    &emsp;
+    You can try the Namer library here. Here are all the options that you can specify while generating names.
+</p>
+
+<EditForm Model="namerSettings">
+    <table class="table" style="vertical-align: middle" width="100%">
+        <thead>
+            <tr>
+                <th>Name count</th>
+                <th>Name starts with...</th>
+                <th>Name ends with...</th>
+                <th>Surname starts with...</th>
+                <th>Surname ends with...</th>
+            </tr>
+        </thead>
+	    <tbody>
+            <tr>
+				<td>
+					<InputNumber TValue="int" @bind-Value="namerSettings.NameCount"></InputNumber>
+                </td>
+                <td>
+					<InputText @bind-Value="namerSettings.NameStartsWith"></InputText>
+                </td>
+                <td>
+                    <InputText @bind-Value="namerSettings.NameEndsWith"></InputText>
+                </td>
+                <td>
+                    <InputText @bind-Value="namerSettings.SurnameEndsWith"></InputText>
+                </td>
+                <td>
+                    <InputText @bind-Value="namerSettings.SurnameEndsWith"></InputText>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" @onclick="@(e => PopulateNames())"><span class="fa fa-play" aria-hidden="true" />  Generate</button>
+
+    @if (names == null)
+    {
+        <p>
+            Click on the generate button to generate names.
+        </p>
+    }
+    else
+    {
+        <table class="table" style="vertical-align: middle" width="100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+				@foreach (string name in names)
+				{
+					<tr>
+						<td>@name</td>
+					</tr>
+				}
+            </tbody>
+        </table>
+    }
+</EditForm>
+
+@code{
+    public NamerSettings namerSettings = new();
+    public static string[] names;
+
+    public async Task PopulateNames()
+    {
+        names = await NamerService.GetNames(namerSettings);
+    }
+}
