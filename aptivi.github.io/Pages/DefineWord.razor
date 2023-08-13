@@ -1,0 +1,129 @@
+﻿@page "/define"
+
+<PageTitle>Dictify Demo - Aptivi</PageTitle>
+
+@using System.Threading;
+@using System.Net;
+@using System.Text;
+@using Dictify.Models;
+@using aptivi.github.io.Data
+@using System.IO
+@using System.Text.Json
+@using Wordament
+@inject WordService Service
+@inject NavigationManager NavManager
+
+<h1>Dictify Demo</h1>
+<br />
+<p>
+    &emsp;
+    You can try the Dictify library here. Select a word from the dropdown menu to be defined. The list of words is provided to you by the Wordament library, which is demonstrated here, too!
+</p>
+
+<EditForm Model="wordSettings">
+    @if (words == null)
+    {
+        <p>
+            Fetching words, please wait...
+        </p>
+    }
+    else
+    {
+        <table class="table" style="vertical-align: middle" width="100%">
+            <thead>
+                <tr>
+                    <th>Page</th>
+                    <th>Word to define</th>
+                </tr>
+            </thead>
+	        <tbody>
+                <tr>
+                    <td>
+                        <InputNumber @bind-Value="wordSettings.SelectedPage"></InputNumber>
+                    </td>
+                    <td>
+                        <InputSelect @bind-Value="wordSettings.SelectedWord">
+                            @for (int i = 50 * (wordSettings.SelectedPage - 1); i < 50 * wordSettings.SelectedPage && i < words.Length - 1; i++)
+                            {
+                                string word = words[i];
+                                <option value=@word>@word</option>
+                            }
+                        </InputSelect>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-primary" @onclick="@(e => PopulateDefinition())"><span class="fa fa-search" aria-hidden="true" />  Define</button>
+    }
+
+    @if (errored)
+    {
+        <p>
+            @errorReason
+        </p>
+    }
+	else if (wordsToDefine == null)
+	{
+		<p>
+			Click on the above button to define a selected word.
+		</p>
+	}
+    else
+    {
+        errored = false;
+        <table class="table" style="vertical-align: middle" width="100%">
+            <thead>
+                <tr>
+                    <th>Part of speech</th>
+                    <th>Meanings</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var word in wordsToDefine)
+                {
+                    @foreach (var meaning in word.Meanings)
+                    {
+                        @foreach (string meaningElement in @meaning.Definitions.Select((def) => string.IsNullOrWhiteSpace(def.Example) ? $"- {def.Definition}" : $"- {def.Definition} - [{def.Example}]"))
+                        {
+                            <tr>
+                                <td>@meaning.PartOfSpeech</td>
+                                <td>@meaningElement</td>
+						    </tr>
+						}
+                    }
+                }
+            </tbody>
+        </table>
+    }
+</EditForm>
+
+<p>Licensed to you by CC-BY-SA 3.0</p>
+
+@code {
+    private string[] words;
+    private WordSettings wordSettings = new();
+    private DictionaryWord[] wordsToDefine;
+    private int maxPages = 1;
+    private bool errored = false;
+    private string errorReason = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        words = await WordManager.GetWordsAsync();
+        maxPages = (int)Math.Truncate((double)words.Length / 50);
+    }
+
+    public async Task PopulateDefinition()
+    {
+        try
+        {
+            wordsToDefine = await Service.GetDefinition(wordSettings);
+            errored = false;
+        }
+        catch (Exception ex)
+        {
+            errored = true;
+            errorReason = ex.Message;
+        }
+    }
+}
