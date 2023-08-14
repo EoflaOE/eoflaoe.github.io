@@ -31,7 +31,7 @@
     }
 
     .nav-item ::deep a {
-        color: #432A4C;
+        color: #C390D9;
         border-radius: 4px;
         height: 3rem;
         display: flex;
@@ -41,12 +41,12 @@
 
         .nav-item ::deep a.active {
             background-color: #432a4c70;
-            color: #432A4C;
+            color: #C390D9;
         }
 
         .nav-item ::deep a:hover {
             background-color: #432a4c70;
-            color: #432A4C;
+            color: #C390D9;
         }
 
 .nav-section {
