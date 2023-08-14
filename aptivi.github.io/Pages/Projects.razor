@@ -55,7 +55,7 @@ else
                     <td>@project.ProjectVersion<br />@project.ProjectCommitSha</td>
 					<td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://www.github.com/Aptivi/{project.ProjectSlug}"))"><span class="fab fa-github" aria-hidden="true" /></button></td>
                     <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.gitbook.io/{project.ProjectGBSlug}"))"><span class="fa fa-book" aria-hidden="true" /></button></td>
-                    <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.github.io/{project.ProjectSlug}"))"><span class="oi oi-code" aria-hidden="true" /></button></td>
+                    <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.github.io/{project.ProjectSlug}", true))"><span class="oi oi-code" aria-hidden="true" /></button></td>
                     @foreach (string nugetPackageName in project.NuGetPackages)
                     {
                         <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://nuget.org/packages/{nugetPackageName}"))"><span class="fa fa-cubes" aria-hidden="true" /></button></td>
