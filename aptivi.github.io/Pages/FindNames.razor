@@ -1,0 +1,173 @@
+﻿@page "/namefind"
+
+<PageTitle>Name Finder Demo - Aptivi</PageTitle>
+
+@using System.Threading;
+@using System.Net;
+@using System.Text;
+@using aptivi.github.io.Data
+@using System.IO
+@using System.Text.Json
+@inject ProjectService ProjService
+@inject NavigationManager NavManager
+
+<h1>Name Finder Demo</h1>
+<br />
+<p>
+    &emsp;
+    You can try the Namer library here. Here are all the options that you can specify while finding names.
+</p>
+
+<EditForm Model="namerSettings">
+	<!--
+		First names
+	-->
+    <table class="table" style="vertical-align: middle" width="100%">
+        <thead>
+            <tr>
+				<th>First Name Search term</th>
+                <th>Prefix</th>
+                <th>Suffix</th>
+            </tr>
+        </thead>
+	    <tbody>
+			<tr>
+				<td>
+					<InputText @bind-Value="namerSettings.NameSearchTerm"></InputText>
+				</td>
+                <td>
+					<InputText @bind-Value="namerSettings.NameStartsWith"></InputText>
+                </td>
+                <td>
+                    <InputText @bind-Value="namerSettings.NameEndsWith"></InputText>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" @onclick="@(e => PopulateNames())"><span class="fa fa-play" aria-hidden="true" />  Generate</button>
+
+    @if (firstNames == null)
+    {
+        <p>
+            Click on the generate button to generate first names.
+        </p>
+    }
+    else if (errored)
+    {
+        <p>
+            @errorReason
+        </p>
+    }
+    else
+    {
+        errored = false;
+        <table class="table" style="vertical-align: middle" width="100%">
+            <thead>
+                <tr>
+                    <th>First name</th>
+                </tr>
+            </thead>
+            <tbody>
+				@for (int i = 0; i < firstNames.Length; i++)
+                {
+                    <tr>
+                        <td>@firstNames[i]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+	<!--
+		Last names
+	-->
+    <table class="table" style="vertical-align: middle" width="100%">
+        <thead>
+            <tr>
+                <th>Last Name Search term</th>
+                <th>Prefix</th>
+                <th>Suffix</th>
+            </tr>
+        </thead>
+	    <tbody>
+			<tr>
+				<td>
+					<InputText @bind-Value="namerSettings.SurnameSearchTerm"></InputText>
+				</td>
+                <td>
+					<InputText @bind-Value="namerSettings.SurnameStartsWith"></InputText>
+                </td>
+                <td>
+                    <InputText @bind-Value="namerSettings.SurnameEndsWith"></InputText>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary" @onclick="@(e => PopulateSurnames())"><span class="fa fa-play" aria-hidden="true" />  Generate</button>
+
+    @if (lastNames == null)
+    {
+        <p>
+            Click on the generate button to generate last names.
+        </p>
+    }
+    else if (errored)
+    {
+        <p>
+            @errorReason
+        </p>
+    }
+    else
+    {
+        errored = false;
+        <table class="table" style="vertical-align: middle" width="100%">
+            <thead>
+                <tr>
+                    <th>Last name</th>
+                </tr>
+            </thead>
+            <tbody>
+				@for (int i = 0; i < lastNames.Length; i++)
+                {
+                    <tr>
+						<td>@lastNames[i]</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</EditForm>
+
+@code{
+    public NamerFinderSettings namerSettings = new();
+    public static string[] firstNames;
+    public static string[] lastNames;
+    public static bool errored = false;
+    public static string errorReason = "";
+
+    public async Task PopulateNames()
+    {
+        try
+        {
+            firstNames = await NamerService.FindNames(namerSettings);
+        }
+        catch (Exception ex)
+        {
+            errored = true;
+            errorReason = ex.Message;
+        }
+    }
+
+    public async Task PopulateSurnames()
+    {
+        try
+        {
+            lastNames = await NamerService.FindSurnames(namerSettings);
+        }
+        catch (Exception ex)
+        {
+            errored = true;
+            errorReason = ex.Message;
+        }
+    }
+}

@@ -38,6 +38,24 @@ namespace aptivi.github.io.Data
                     namerSettings.SurnameStartsWith,
                     namerSettings.SurnameEndsWith
                 );
-		}
+        }
+
+        public static async Task<string[]> FindNames(NamerFinderSettings namerSettings)
+        {
+            return await NameGenerator.FindFirstNamesAsync(
+                    namerSettings.NameSearchTerm,
+                    namerSettings.NameStartsWith,
+                    namerSettings.NameEndsWith
+                );
+        }
+
+        public static async Task<string[]> FindSurnames(NamerFinderSettings namerSettings)
+        {
+            return await NameGenerator.FindLastNamesAsync(
+                    namerSettings.SurnameSearchTerm,
+                    namerSettings.SurnameStartsWith,
+                    namerSettings.SurnameEndsWith
+                );
+        }
     }
 }
