@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
-using Dictify.Manager;
-using Dictify.Models;
+using Textify.Online.EnglishDictionary;
 
 namespace aptivi.github.io.Data
 {

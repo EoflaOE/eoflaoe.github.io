@@ -1,11 +1,5 @@
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System;
 using System.Threading.Tasks;
-using aptivi.github.io.Utilities;
-using Namer;
+using Textify.NameGen;
 
 namespace aptivi.github.io.Data
 {

@@ -1,23 +1,23 @@
 ﻿@page "/define"
 
-<PageTitle>Dictify Demo - Aptivi</PageTitle>
+<PageTitle>Textify's Dictionary Demo - Aptivi</PageTitle>
 
 @using System.Threading;
 @using System.Net;
 @using System.Text;
-@using Dictify.Models;
+@using Textify.Online.EnglishDictionary
+@using Textify.Words
 @using aptivi.github.io.Data
 @using System.IO
 @using System.Text.Json
-@using Wordament
 @inject WordService Service
 @inject NavigationManager NavManager
 
-<h1>Dictify Demo</h1>
+<h1>Textify's Dictionary Demo</h1>
 <br />
 <p>
     &emsp;
-    You can try the Dictify library here. Select a word from the dropdown menu to be defined. The list of words is provided to you by the Wordament library, which is demonstrated here, too!
+	You can try the Textify's Dictionary feature here. Select a word from the dropdown menu to be defined. The list of words is provided to you by the Textify library, which is demonstrated here, too!
 </p>
 
 <EditForm Model="wordSettings">
