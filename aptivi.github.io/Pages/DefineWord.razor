@@ -1,11 +1,12 @@
 ﻿@page "/define"
 
-<PageTitle>Textify's Dictionary Demo - Aptivi</PageTitle>
+<PageTitle>Nettify's Dictionary Demo - Aptivi</PageTitle>
 
 @using System.Threading;
 @using System.Net;
 @using System.Text;
-@using Textify.Online.EnglishDictionary
+@using Nettify.EnglishDictionary
+@using Textify.Data
 @using Textify.Words
 @using aptivi.github.io.Data
 @using System.IO
@@ -100,16 +101,17 @@
 <p>Licensed to you by CC-BY-SA 3.0</p>
 
 @code {
-    private string[] words;
-    private WordSettings wordSettings = new();
-    private DictionaryWord[] wordsToDefine;
-    private int maxPages = 1;
-    private bool errored = false;
-    private string errorReason = "";
+	private string[] words;
+	private WordSettings wordSettings = new();
+	private DictionaryWord[] wordsToDefine;
+	private int maxPages = 1;
+	private bool errored = false;
+	private string errorReason = "";
 
-    protected override async Task OnInitializedAsync()
-    {
-        words = await WordManager.GetWordsAsync();
+	protected override async Task OnInitializedAsync()
+	{
+		DataInitializer.Initialize(DataType.Words);
+		words = await WordManager.GetWordsAsync();
         maxPages = (int)Math.Truncate((double)words.Length / 50);
     }
 

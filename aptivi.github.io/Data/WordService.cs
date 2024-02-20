@@ -1,5 +1,5 @@
+using Nettify.EnglishDictionary;
 using System.Threading.Tasks;
-using Textify.Online.EnglishDictionary;
 
 namespace aptivi.github.io.Data
 {

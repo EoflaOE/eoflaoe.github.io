@@ -5,6 +5,7 @@
 @using System.Threading;
 @using System.Net;
 @using System.Text;
+@using Textify.Data
 @using aptivi.github.io.Data
 @using System.IO
 @using System.Text.Json
@@ -89,18 +90,19 @@
 </EditForm>
 
 @code{
-    public NamerSettings namerSettings = new();
-    public static string[] names;
-    public static string[] firstNames;
-    public static string[] lastNames;
-    public static bool errored = false;
-    public static string errorReason = "";
+	public NamerSettings namerSettings = new();
+	public static string[] names;
+	public static string[] firstNames;
+	public static string[] lastNames;
+	public static bool errored = false;
+	public static string errorReason = "";
 
-    public async Task PopulateNames()
-    {
-        try
-        {
-            names = await NamerService.GetNames(namerSettings);
+	public async Task PopulateNames()
+	{
+		try
+		{
+			DataInitializer.Initialize(DataType.Names);
+			names = await NamerService.GetNames(namerSettings);
             firstNames = await NamerService.GetFirstNames(namerSettings);
             lastNames = await NamerService.GetLastNames(namerSettings);
         }

@@ -5,6 +5,7 @@
 @using System.Threading;
 @using System.Net;
 @using System.Text;
+@using Textify.Data
 @using aptivi.github.io.Data
 @using System.IO
 @using System.Text.Json
@@ -148,7 +149,8 @@
     public async Task PopulateNames()
     {
         try
-        {
+		{
+			DataInitializer.Initialize(DataType.Names);
             firstNames = await NamerService.FindNames(namerSettings);
         }
         catch (Exception ex)
@@ -161,7 +163,8 @@
     public async Task PopulateSurnames()
     {
         try
-        {
+		{
+			DataInitializer.Initialize(DataType.Names);
             lastNames = await NamerService.FindSurnames(namerSettings);
         }
         catch (Exception ex)
