@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      PUBLISH_FOLDER: aptivi.github.io/bin/Release/net8.0/publish/wwwroot
+      PUBLISH_FOLDER: /home/runner/work/aptivi.github.io/aptivi.github.io/aptivi.github.io/bin/Release/net8.0/publish/wwwroot
 
     name: Build and Deploy Job
     steps:
@@ -24,7 +24,7 @@ jobs:
         run: dotnet publish --configuration Release
   
       - name: copy index.html to 404.html
-        run: cp $GITHUB_WORKSPACE/$PUBLISH_FOLDER/index.html $GITHUB_WORKSPACE/$PUBLISH_FOLDER/404.html
+        run: cp $PUBLISH_FOLDER/index.html $PUBLISH_FOLDER/404.html
       
       - name: Add .nojekyll file
         run: touch $PUBLISH_FOLDER/.nojekyll
@@ -35,7 +35,7 @@ jobs:
         with:
             github_token: ${{ secrets.G_TOKEN }}
             publish_branch: gh-pages
-            publish_dir: /${{ env.PUBLISH_FOLDER }}
+            publish_dir: ${{ env.PUBLISH_FOLDER }}
             allow_empty_commit: false
             keep_files: false
             force_orphan: true
