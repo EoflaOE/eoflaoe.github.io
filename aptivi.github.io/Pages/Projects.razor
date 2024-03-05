@@ -57,10 +57,13 @@ else
 					<td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://www.github.com/@org/{project.ProjectSlug}"))"><span class="fab fa-github" aria-hidden="true" /></button></td>
                     <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.gitbook.io/{project.ProjectGBSlug}"))"><span class="fa fa-book" aria-hidden="true" /></button></td>
                     <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://aptivi.github.io/{project.ProjectSlug}", true))"><span class="oi oi-code" aria-hidden="true" /></button></td>
-                    @foreach (string nugetPackageName in project.NuGetPackages)
-                    {
-                        <td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://nuget.org/packages/{nugetPackageName}"))"><span class="fa fa-cubes" aria-hidden="true" /></button></td>
-                    }
+					@if (project.NuGetPackages is not null)
+					{
+						@foreach (string nugetPackageName in project.NuGetPackages)
+						{
+							<td><button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://nuget.org/packages/{nugetPackageName}"))"><span class="fa fa-cubes" aria-hidden="true" /></button></td>
+						}
+					}
                 </tr>
             }
         </tbody>
