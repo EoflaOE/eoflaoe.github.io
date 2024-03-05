@@ -20,7 +20,8 @@ namespace aptivi.github.io.Data
                 try
                 {
                     Project project = projectsObject[i];
-                    string apiLink = $"https://api.github.com/repos/Aptivi/{project.ProjectSlug}/tags";
+                    string org = string.IsNullOrEmpty(project.ProjectOrg) ? "Aptivi" : $"Aptivi-{project.ProjectOrg}";
+                    string apiLink = $"https://api.github.com/repos/{org}/{project.ProjectSlug}/tags";
                     string apiJsonContent = await client.GetStringAsync(apiLink).ConfigureAwait(false);
                     var apiJsonDocument = JsonNode.Parse(apiJsonContent);
                     string version = apiJsonDocument[0]["name"].GetValue<string>();

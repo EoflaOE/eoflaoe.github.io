@@ -10,6 +10,7 @@ namespace aptivi.github.io.Data
         public string ProjectGBSlug { get; set; }
         public string[] NuGetPackages { get; set; }
         public string ProjectImageLink { get; set; }
+        public string ProjectOrg { get; set; }
 
         [JsonIgnore]
         public string ProjectVersion { get; set; }
