@@ -15,36 +15,24 @@
 <h1>Name Finder Demo</h1>
 <br />
 <p>
-    &emsp;
-    You can try the Textify's Name Generator feature here. Here are all the options that you can specify while finding names.
+    
+    You can try the Textify's Name Generator feature here. Here are all the options that you can specify
+	while finding names.
 </p>
 
 <EditForm Model="namerSettings">
 	<!--
 		First names
 	-->
-    <table class="table" style="vertical-align: middle" width="100%">
-        <thead>
-            <tr>
-				<th>First Name Search term</th>
-                <th>Prefix</th>
-                <th>Suffix</th>
-            </tr>
-        </thead>
-	    <tbody>
-			<tr>
-				<td>
-					<InputText @bind-Value="namerSettings.NameSearchTerm"></InputText>
-				</td>
-                <td>
-					<InputText @bind-Value="namerSettings.NameStartsWith"></InputText>
-                </td>
-                <td>
-                    <InputText @bind-Value="namerSettings.NameEndsWith"></InputText>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+	<p>First Name Search term</p>
+	<InputText @bind-Value="namerSettings.NameSearchTerm"></InputText>
+	<br />
+	<p>Prefix</p>
+	<InputText @bind-Value="namerSettings.NameStartsWith"></InputText>
+	<br />
+	<p>Suffix</p>
+	<InputText @bind-Value="namerSettings.NameEndsWith"></InputText>
+	<br />
     <button class="btn btn-primary" @onclick="@(e => PopulateNames())"><span class="fa fa-play" aria-hidden="true" />  Generate</button>
 
     @if (firstNames == null)
@@ -82,28 +70,15 @@
 	<!--
 		Last names
 	-->
-    <table class="table" style="vertical-align: middle" width="100%">
-        <thead>
-            <tr>
-                <th>Last Name Search term</th>
-                <th>Prefix</th>
-                <th>Suffix</th>
-            </tr>
-        </thead>
-	    <tbody>
-			<tr>
-				<td>
-					<InputText @bind-Value="namerSettings.SurnameSearchTerm"></InputText>
-				</td>
-                <td>
-					<InputText @bind-Value="namerSettings.SurnameStartsWith"></InputText>
-                </td>
-                <td>
-                    <InputText @bind-Value="namerSettings.SurnameEndsWith"></InputText>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+	<p>Last Name Search term</p>
+	<InputText @bind-Value="namerSettings.SurnameSearchTerm"></InputText>
+	<br />
+	<p>Prefix</p>
+	<InputText @bind-Value="namerSettings.SurnameStartsWith"></InputText>
+	<br />
+	<p>Suffix</p>
+	<InputText @bind-Value="namerSettings.SurnameEndsWith"></InputText>
+	<br />
     <button class="btn btn-primary" @onclick="@(e => PopulateSurnames())"><span class="fa fa-play" aria-hidden="true" />  Generate</button>
 
     @if (lastNames == null)
@@ -150,7 +125,6 @@
     {
         try
 		{
-			DataInitializer.Initialize(DataType.Names);
             firstNames = await NamerService.FindNames(namerSettings);
         }
         catch (Exception ex)
@@ -164,7 +138,6 @@
     {
         try
 		{
-			DataInitializer.Initialize(DataType.Names);
             lastNames = await NamerService.FindSurnames(namerSettings);
         }
         catch (Exception ex)

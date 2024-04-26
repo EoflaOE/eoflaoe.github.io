@@ -15,41 +15,27 @@
 <h1>Name Generator Demo</h1>
 <br />
 <p>
-    &emsp;
-	You can try the Textify's Name Generator library here. Here are all the options that you can specify while generating names.
+    
+	You can try the Textify's Name Generator library here. Here are all the options that you can specify
+	while generating names.
 </p>
 
 <EditForm Model="namerSettings">
-    <table class="table" style="vertical-align: middle" width="100%">
-        <thead>
-            <tr>
-                <th>Name count</th>
-                <th>Name starts with...</th>
-                <th>Name ends with...</th>
-                <th>Surname starts with...</th>
-                <th>Surname ends with...</th>
-            </tr>
-        </thead>
-	    <tbody>
-            <tr>
-				<td>
-					<InputNumber TValue="int" @bind-Value="namerSettings.NameCount"></InputNumber>
-                </td>
-                <td>
-					<InputText @bind-Value="namerSettings.NameStartsWith"></InputText>
-                </td>
-                <td>
-                    <InputText @bind-Value="namerSettings.NameEndsWith"></InputText>
-                </td>
-                <td>
-                    <InputText @bind-Value="namerSettings.SurnameStartsWith"></InputText>
-                </td>
-                <td>
-                    <InputText @bind-Value="namerSettings.SurnameEndsWith"></InputText>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+	<p>Name count</p>
+	<InputNumber TValue="int" @bind-Value="namerSettings.NameCount"></InputNumber>
+	<br />
+	<p>Name starts with...</p>
+	<InputText @bind-Value="namerSettings.NameStartsWith"></InputText>
+	<br />
+	<p>Name ends with...</p>
+	<InputText @bind-Value="namerSettings.NameEndsWith"></InputText>
+	<br />
+	<p>Surname starts with...</p>
+	<InputText @bind-Value="namerSettings.SurnameStartsWith"></InputText>
+	<br />
+	<p>Surname ends with...</p>
+	<InputText @bind-Value="namerSettings.SurnameEndsWith"></InputText>
+	<br />
     <button class="btn btn-primary" @onclick="@(e => PopulateNames())"><span class="fa fa-play" aria-hidden="true" />  Generate</button>
 
     @if (names == null && firstNames == null && lastNames == null)
@@ -101,7 +87,6 @@
 	{
 		try
 		{
-			DataInitializer.Initialize(DataType.Names);
 			names = await NamerService.GetNames(namerSettings);
             firstNames = await NamerService.GetFirstNames(namerSettings);
             lastNames = await NamerService.GetLastNames(namerSettings);

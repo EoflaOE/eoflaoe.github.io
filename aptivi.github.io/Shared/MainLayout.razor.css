@@ -8,19 +8,15 @@ main {
     flex: 1;
 }
 
-.sidebar {
-    background: linear-gradient(180deg, rgb(2,1,67) 0%, rgb(36,2,74) 60%);
+.page {
+    flex-direction: row;
 }
 
-@media (min-width: 641px) {
-    .page {
-        flex-direction: row;
-    }
-
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
+.sidebar {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }

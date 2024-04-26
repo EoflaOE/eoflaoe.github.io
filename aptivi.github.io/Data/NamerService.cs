@@ -1,5 +1,5 @@
 using System.Threading.Tasks;
-using Textify.NameGen;
+using Textify.Data.Analysis.NameGen;
 
 namespace aptivi.github.io.Data
 {
