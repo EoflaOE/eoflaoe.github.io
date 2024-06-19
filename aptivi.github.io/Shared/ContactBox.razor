@@ -10,8 +10,10 @@
     </span>
     <br />
     <br />
-    <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://github.com/Aptivi"))"><span class="fa-brands fa-github" aria-hidden="true" /></button>
-    <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo($"https://fosstodon.org/@aptivi"))"><span class="fa-brands fa-mastodon" aria-hidden="true" /></button>
+    <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://github.com/Aptivi"))"><span class="fa-brands fa-github" aria-hidden="true" /></button>
+    <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://aptivi.gitbook.io/"))"><span class="fa-solid fa-book" aria-hidden="true" /></button>
+    <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://www.threads.net/@officialaptivi"))"><span class="fa-brands fa-threads" aria-hidden="true" /></button>
+    <button class="btn btn-primary" @onclick="@(e => NavManager.NavigateTo("https://www.instagram.com/officialaptivi"))"><span class="fa-brands fa-instagram" aria-hidden="true" /></button>
 </div>
 
 @code {
