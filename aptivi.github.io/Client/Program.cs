@@ -18,8 +18,6 @@ namespace aptivi.github.io.Client
 
             // Add necessary services
             builder.Services.AddSingleton<ProjectService>();
-            builder.Services.AddSingleton<NamerService>();
-            builder.Services.AddSingleton<WordService>();
 
 			await builder.Build().RunAsync();
         }
