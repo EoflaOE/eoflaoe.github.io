@@ -1,0 +1,84 @@
+/* /Shared/MainLayout.razor.rz.scp.css */
+.page[b-e2slix75g4] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-e2slix75g4] {
+    flex: 1;
+}
+
+.page[b-e2slix75g4] {
+    flex-direction: row;
+}
+
+.sidebar[b-e2slix75g4] {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    z-index: 1;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+/* /Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-bqqyygtbjk] {
+    background-color: #432a4c70;
+}
+
+.top-row[b-bqqyygtbjk] {
+    height: 7rem;
+}
+
+.navbar-brand[b-bqqyygtbjk] {
+    font-size: 1.1rem;
+}
+
+.oi[b-bqqyygtbjk] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    top: -2px;
+}
+
+.nav-item[b-bqqyygtbjk] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-left: 0.1rem !important;
+    padding-right: 0.1rem !important;
+}
+
+    .nav-item[b-bqqyygtbjk]  a {
+        color: #C390D9;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+        .nav-item[b-bqqyygtbjk]  a.active {
+            background-color: #432a4c70;
+            color: #C390D9;
+        }
+
+        .nav-item[b-bqqyygtbjk]  a:hover {
+            background-color: #432a4c70;
+            color: #C390D9;
+        }
+
+.collapse[b-bqqyygtbjk] {
+    display: block;
+}
+
+.navbar-nav[b-bqqyygtbjk] {
+    flex-direction: row;
+    padding-right: .5rem;
+    padding-left: .5rem;
+}
+
+    .navbar-nav .nav-link[b-bqqyygtbjk] {
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
